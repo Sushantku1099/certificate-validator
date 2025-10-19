@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.csv-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00b894;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Form Section */
+.certificate-form-section {
+  padding: 40px;
+  background: #f8f9fa;
+}
+
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.certificate-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.help-text {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 160px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #7f8c8d;
+  transform: translateY(-2px);
+}
+
+/* Results Section */
+.results-section {
+  padding: 0 40px 40px;
+}
+
+.error-message {
+  background: #ffeaa7;
+  border: 2px solid #fdcb6e;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.error-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+/* Certificate Details */
+.certificate-details {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(116, 185, 255, 0.3);
+}
+
+.certificate-header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.certificate-header h2 {
+  color: #2d3436;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.status-badge {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.status-badge.valid {
+  background: #00b894;
+  color: white;
+}
+
+.certificate-info {
+  padding: 30px;
+  background: white;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-item label {
+  font-weight: 600;
+  color: #636e72;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-item .value {
+  font-size: 1.1rem;
+  color: #2d3436;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid #dfe6e9;
+}
+
+.certificate-footer {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.validation-note {
+  color: #636e72;
+  font-style: italic;
+  margin: 0 0 10px 0;
+}
+
+.timestamp {
+  color: #b2bec3;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Database Status */
+.database-status {
+  padding: 20px 40px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.status-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.status-value {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status-value.loading {
+  background: #ffeaa7;
+  color: #e17055;
+}
+
+.status-value.loaded {
+  background: #00b894;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    border-radius: 10px;
+  }
+
+  .app-header {
+    padding: 20px;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .certificate-form-section,
+  .results-section {
+    padding: 20px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .database-status {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-container h2 {
+    font-size: 1.5rem;
+  }
+}
